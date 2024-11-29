@@ -4,6 +4,9 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background: #080808;
     color: #fff;
@@ -310,6 +313,11 @@ form .cv{
     background: #262626;
     font-weight: 300;
     margin-top: 20px;
+}
+#msg{
+    color: #16b752;
+    margin-top: -20px;
+    display: block;
 }
 
 /*-----small screen------*/

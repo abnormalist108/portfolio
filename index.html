@@ -14,11 +14,11 @@
             <nav>
                 <h1><span>M</span>S.</h1>
                 <ul id="sidemenu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Interests</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Interests</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
                 </ul>
                 <i class="fa-solid fa-bars" onclick="openmenu()"></i>
@@ -38,13 +38,7 @@
                 </div>
                 <div class="col2">
                     <h1 class="subtitle">About me</h1>
-                    <p>Final year B. Tech student specializing in Artificial Intelligence 
-                        and Machine Learning, proficient in Python, and currently 
-                        exploring Full Stack Web Development, and data analysis. I 
-                        have extensive knowledge in MySQL for database 
-                        management. Seeking opportunities to contribute to 
-                        innovative projects, being a quick learner with effective 
-                        communication skills.</p>
+                    <p>B. Tech graduate with honors in Artificial Intelligence and Machine Learning, proficient in Python, and currently expanding expertise in Full Stack Web Development and Data Analysis. I have solid experience with MySQL for database management and bring effective communication skills and a quick-learning mindset. Actively seeking opportunities to contribute to innovative projects and make a meaningful impact.</p>
 
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -60,16 +54,16 @@
                     </div>
                     <div class="tab-contents" id="projects">
                         <ul>
+                            <li><span>Air Realm</span><br>Developed 'Air Realm,' an innovative system enabling computer control via hand gestures. Leveraging OpenCV and Mediapipe for gesture recognition, the project allows users to control presentations, media, and manage files or folders seamlessly, showcasing expertise in computer vision and real-time interaction.</li>
                             <li><span>Media Controller using Hand Gesture</span><br>Created a real-time Media Controller with Hand Gesture recognition using OpenCV and Python, enabling intuitive playback control.</li>
                             <li><span>Complaint Management System</span><br>Built a Complaint Management System with MySQL for databases and Python's Tkinter for the user interface, facilitating user-friendly complaint registration and tracking.</li>
-                            <li><span>Temperature Converter Website</span><br>Designed and built an interactive temperature converter website, offering seamless temperature unit conversion for enhanced user experience.</li>
                         </ul>
                     </div>
                     <div class="tab-contents" id="Education">
                         <ul>
-                            <li><span>10th</span><br>St. Thomas Mat. Hr. Sec. School (2017-2018)</li>
-                            <li><span>12th</span><br>St. Thomas Mat. Hr. Sec. School (2019-2020)</li>
-                            <li><span>B.Tech (AI&ML)</span><br>Hindusthan College of Engineering and Technology (2021-present)</li>
+                            <li><span>10th</span><br>St. Thomas Mat. Hr. Sec. School (2017-2018) - 93.4%</li>
+                            <li><span>12th</span><br>St. Thomas Mat. Hr. Sec. School (2019-2020) - 78.9%</li>
+                            <li><span>B.Tech (AI&ML with Honours)</span><br>Hindusthan College of Engineering and Technology (2021-2024) - 89%</li>
                         </ul>
                     </div>
                 </div>
@@ -110,7 +104,15 @@
             <h1 class="subtitle">My Projects</h1>
             <div class="work-list">
                 <div class="work">
-                    <img src="images/work-1.png">
+                    <img src="images/Air realm img.jpg">
+                    <div class="layer">
+                        <h3>Air Realm</h3>
+                        <p>Created 'Air Realm,' a system using OpenCV and Mediapipe for hand gesture-based control of presentations, media, and files, highlighting expertise in computer vision.</p>
+                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/media comtroller img.jpg">
                     <div class="layer">
                         <h3>Media Controller</h3>
                         <p>'Media Controller Using Hand Gesture,' using OpenCV and Python to create real-time gesture recognition for intuitive media control.</p>
@@ -118,18 +120,10 @@
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/work-2.png">
+                    <img src="images/complaint img.jpg">
                     <div class="layer">
                         <h3>Complaint Management System</h3>
                         <p>Created a Complaint Management System using MySQL for database and Python's Tkinter for the user interface, streamlining complaint registration, tracking, and management. </p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-                <div class="work">
-                    <img src="images/work-3.png">
-                    <div class="layer">
-                        <h3>Temperature Converter Website</h3>
-                        <p>Designed and developed a user-friendly website for temperature conversion, enhancing usability and convenience for users.</p>
                         <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                     </div>
                 </div>
@@ -154,12 +148,13 @@
                     <a href="images/resume .pdf" download class="btn cv">Download CV</a>
                 </div>
                 <div class="contact-right">
-                    <form>
+                    <form name="submit-to-google-sheet">
                         <input type="text" name="Name" placeholder="Your Name" required>
                         <input type="email" name="Email" placeholder="Your Email" required>
                         <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn cv">Submit</button>
                     </form>
+                    <span id="msg"></span>
                 </div>
             </div>
         </div>
@@ -189,5 +184,23 @@
             sidemenu.style.right="-200px";
         }
     </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzCTQx44cNxRvV-gxnB05wPBHituwqTWYG5Gj6Pjp-7PCwBsKWNvu5bWK4N3fuTcXsD/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Hii! I'll get back to you shortly!!"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                }, 5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
 </body>
 </html>
